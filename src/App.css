@@ -333,7 +333,7 @@
 
 /*Button*/
 .form button {
-    background-color: #0066ff;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
     color: #fff;
     border: 0;
     border-radius: 24px;
