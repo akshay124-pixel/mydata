@@ -106,7 +106,9 @@ function DashBoard() {
   const fetchEntries = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:4000/api/fetch-entry");
+      const response = await axios.get(
+        "https://dmserver.onrender.com/api/fetch-entry"
+      );
       setEntries(response.data);
       setLoading(false);
     } catch (error) {
@@ -193,7 +195,7 @@ function DashBoard() {
 
         // Send valid entries to the backend
         const response = await axios.post(
-          "http://localhost:4000/api/entries",
+          "https://dmserver.onrender.com/api/entries",
           validEntries,
           {
             headers: { "Content-Type": "application/json" },
@@ -221,9 +223,12 @@ function DashBoard() {
   const handleExport = async () => {
     try {
       // Send request using Axios to export stock data
-      const response = await axios.get("http://localhost:4000/api/export", {
-        responseType: "arraybuffer", // Receive the response as a binary array
-      });
+      const response = await axios.get(
+        "https://dmserver.onrender.com/api/export",
+        {
+          responseType: "arraybuffer", // Receive the response as a binary array
+        }
+      );
 
       // Create a Blob from the received array buffer
       const blob = new Blob([response.data], {
@@ -261,7 +266,7 @@ function DashBoard() {
   const handleSubmitted = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/editentry/${editData._id}`,
+        `https://dmserver.onrender.com/api/editentry/${editData._id}`,
         editData
       );
 
@@ -286,7 +291,7 @@ function DashBoard() {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/entry",
+        "https://dmserver.onrender.com/api/entry",
         formData
       );
       console.log(response.data);
@@ -370,7 +375,7 @@ function DashBoard() {
     if (confirmDelete) {
       try {
         const response = await axios.delete(
-          `http://localhost:4000/api/entry/${id}`
+          `https://dmserver.onrender.com/api/entry/${id}`
         );
         if (response.status === 200) {
           // Successfully deleted
