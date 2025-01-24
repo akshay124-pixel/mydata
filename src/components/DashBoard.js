@@ -751,7 +751,7 @@ function DashBoard() {
                   Date
                 </th>
                 <th style={{ backgroundColor: "transparent", color: "white" }}>
-                  Customer Name
+                  Customer
                 </th>
                 <th style={{ backgroundColor: "transparent", color: "white" }}>
                   Mobile Number
